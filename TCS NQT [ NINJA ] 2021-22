@@ -205,6 +205,110 @@ Input :
 3	-> value of C(column)
 [0 1 0 1 1 0 1 1 1] -> Elements of the array M[R][C] where each element is separated by new line.
 
+Solution  :--------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int r,c,a,sum=0,m=INT_MIN,in=0;
+    cin>>r>>c;
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            cin>>a;
+            sum+=a;
+        }
+        if(sum>m)
+        {
+            m=sum;
+            in=i+1;
+        }
+        sum=0;
+    }
+    cout<<in;
+}
+****************************************************************************************************************************************
+
+Question 2.------------------------------------------------------------------------------------------------
+
+Given an integer array Arr of size N the task is to find the count of elements whose value is greater than all of its prior elements.
+Note : 1st element of the array should be considered in the count of the result.
+For example,
+Arr[]={7,4,8,2,9}
+As 7 is the first element, it will consider in the result.
+8 and 9 are also the elements that are greater than all of its previous elements.
+
+Since total of  3 elements is present in the array that meets the condition.
+Hence the output = 3.
+
+Solution :------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+  int n;
+  cin >> n;
+  int arr[n];
+  int cnt=0;
+  for(int i=0;i<n;i++)
+  {
+      cin >> arr[i];
+  }
+  for(int i=0;i<n;i++)
+  {
+       if(arr[i]>=arr[0])
+       {
+           cnt++;
+       }
+  }
+  cout << cnt;
+}
+*************************************************************************************************************************************************
+
+Question 3:----------------------------------------------------------------------------
+
+Airport security officials have confiscated several item of the passengers at the security check point. All the items have been dumped into a huge box (array). Each item possesses a certain amount of risk[0,1,2]. Here, the risk severity of the items represent an array[] of N number of integer values. The task here is to sort the items based on their levels of risk in the array. The risk values range from 0 to 2.
+
+Example :
+Input :
+7  -> Value of N
+[1,0,2,0,1,0,2]-> Element of arr[0] to arr[N-1], while input each element is separated by new line.
+
+Output :
+0 0 0 1 1 2 2  -> Element after sorting based on risk severity 
+
+Solution:--------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+  int n;
+  cin >> n;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  {
+      cin >> arr[i];
+  }
+  
+  sort(arr,arr+n);
+  
+  for(int i=0;i<n;i++)
+  {
+       cout << arr[i] << " ";
+  }
+  cout << endl;
+}
+***************************************************************************************************************************************
+
+
+
 
 
 
