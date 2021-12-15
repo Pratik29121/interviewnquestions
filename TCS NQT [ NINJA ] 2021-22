@@ -4,7 +4,6 @@
 
 Question 1. -------------------------------------------------------------------------------
 
-Question 1:
 An automobile company manufactures both a two wheeler (TW) and a four wheeler (FW). A company manager wants to make the production of both types 
 of vehicle according to the given data below:
 1st data, Total number of vehicle (two-wheeler + four-wheeler)=v
@@ -68,4 +67,128 @@ int main()
     cout<<b-a;
 }
 *************************************************************************************************
+
+Question 3. --------------------------------------------------------------------------------
+
+A chocolate factory is packing chocolates into the packets. The chocolate packets here represent an array arrt of N number of integer values.
+The task is to find the empty packets(0) of chocolate and push it to the end of the conveyor belt(array).
+
+For Example:
+N=7 and arr = [4,5,0,1.9,0,5,0].
+There are 3 empty packets in the given set. These 3 empty packets represented as O should be pushed towards the end of the array
+Example 1:
+Input:
+7  - Value of N
+[4,5,0,1,0,0,5] - Element of arr[O] to arr[N-1],While input each element is separated by newline
+Output:
+4 5 1 9 5 0 0
+
+Solution :----------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+  int n;
+  cin >> n;
+  int arr[n];
+  int cnt=0;
+  for(int i=0;i<n;i++)
+  {
+      cin >> arr[i];
+  }
+  for(int i=0;i<n;i++)
+  {
+      if(arr[i]==0)
+      {
+          cnt++;
+          continue;
+      }
+      
+      cout << arr[i] << " ";
+  }
+  for(int i=0;i<cnt;i++)
+  {
+      cout << 0 << " ";
+  }
+  return 0;
+ 
+}
+***********************************************************************************************************************
+
+Question 4.---------------------------------------------------------------------------------------------------------
+
+Joseph is learning digital logic subject which will be for his next semester. He usually tries to solve unit assignment problems before the lecture. 
+Today he got one tricky question. The problem statement is “A positive integer has been given as an input. Convert decimal value to binary representation. 
+Toggle all bits of it after the most significant bit including the most significant bit. Print the positive integer value after toggling all bits”.
+
+Constraints :
+1<=N<=100
+
+Example 1:
+Input :
+10  -> Integer
+Output :
+5    -> result- Integer
+
+Solution : --------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int n; cin>>n;
+    int k=(1<<(int)floor(log2(n))+1)-1;
+    cout<<(n^k);
+}
+
+*************************************************************************************************************************************
+
+Question 5.------------------------------------------------------------------------------------------------
+
+Jack is always excited about sunday. It is favourite day, when he gets to play all day. And goes to cycling with his friends. 
+So every time when the months starts he counts the number of sundays he will get to enjoy. Considering the month can start with any day,
+be it Sunday, Monday…. Or so on.
+Count the number of Sunday jack will get within n number of days.
+
+Example 1:
+Input 
+mon-> input String denoting the start of the month.
+13  -> input integer denoting the number of days from the start of the month.
+
+Output :
+2    -> number of days within 13 days.
+
+Solution :---------------------
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    string str;
+    cin >> str;
+    int n; cin>>n;
+    int res=1;
+    string arr[]={"mon","tue,","wed","thu","fri","sat","sun"};
+    for(int i=1;i<=str.length();i++)
+    {
+        if(arr[i]==str)
+        break;
+        
+       	int rem=6-i;
+       	n=n-rem;  	 
+       	if(n>0)
+        res+=n/7;
+    }
+    cout << res;
+          
+}
+**********************************************************************************************************************************
+
+
+
+
+
 
