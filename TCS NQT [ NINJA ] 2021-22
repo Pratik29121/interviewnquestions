@@ -375,7 +375,7 @@ Example 1:
 Output :
 r -> [r,g,b,b,g,y,y]  -> “r” colour balloon is present odd number of times in the bunch.
 
-Solution : ---------- [ NOT ABLE TO SOLVE ] ----
+Solution : ---------- [ NOT ABLE TO SOLVE ] ----  ########################################################################################
 
 *****************************************************************************************************************************************************************
 
@@ -505,14 +505,17 @@ w  o   r   d
 |  |   |   |
 b  t   w   i
 
-Solution :------------------------     [ PENDING /  USING ASCII VALUE ]----------------------------
+Solution :------------------------     [ PENDING /  USING ASCII VALUE ]----------------------------#########################################################
+
 ***************************************************************************************************************************************
 
 ////////////////////////////////////////////////////////////////////  14 sept [ slot 1 ] ///////////////////////////////////////////////////////////////////////////////////
 
 Problem 1 :--------------------------------------------------------------------------------------------------
 
-An English school teacher is teaching how to build sentences for kindergarten students. She starts by teaching two words in a sentence, then 3 words and so on. The next step is that she asks the students to find which word in the sentence they have made has the maximum number of alphabets. The task here is to write program to find the longest word in each input sentence(str).
+An English school teacher is teaching how to build sentences for kindergarten students. 
+She starts by teaching two words in a sentence, then 3 words and so on. The next step is that she asks the students to find which word in the 
+sentence they have made has the maximum number of alphabets. The task here is to write program to find the longest word in each input sentence(str).
 
 Note :
 The sentence can consist of uppercase, lowercase alphabets, special characters and numbers.
@@ -548,7 +551,8 @@ int main()
 
 Question 2.-------------------------------------------------------------------------------------------------------------
 
-An international round table conference will be held in india. Presidents from all over the world representing their respective countries will be attending the conference. The task is to find the possible number of ways(P) to make the N members sit around the circular table such that.
+An international round table conference will be held in india. Presidents from all over the world representing their respective countries will be attending the conference. 
+The task is to find the possible number of ways(P) to make the N members sit around the circular table such that.
 The president and prime minister of India will always sit next to each other.
 
 Example 1:
@@ -593,7 +597,10 @@ int main()
 
 problem 1 : ------------------------------------------------------------------------------------
 
-Ab ‘N’ number of customers are waiting at a restaurant that is recently opened. After every ‘M’ minutes , a new customer arrives at the restaurant. Due to the huge crowd, customers have to wait for their table at the restaurant. Only one customer is allowed at a time. The manager at the reception desk asks each customer to wait for ‘X‘ minutes to get their table. The task is to calculate the duration (in minutes) the last customer arrived needs to wait.
+Ab ‘N’ number of customers are waiting at a restaurant that is recently opened. After every ‘M’ minutes , a new customer arrives at the restaurant.
+Due to the huge crowd, customers have to wait for their table at the restaurant. Only one customer is allowed at a time. 
+The manager at the reception desk asks each customer to wait for ‘X‘ minutes to get their table.
+The task is to calculate the duration (in minutes) the last customer arrived needs to wait.
 
 Example 1:
 5      Value of N
@@ -604,6 +611,271 @@ Output :
 28
 
 Solution :----------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+  int n,m,x;
+  cin>>n>>m>>x;
+  cout << (x*(n-1) - m*(n-1)) << endl;
+}
+******************************************************************************************************************************************************
+
+Question :2 -------------------------------------------------------------------------------------------------------
+
+A furnishing company is manufacturing a new collection of curtains. The curtains are of two colors aqua(a) and black (b). 
+The curtains color is represented as a string(str) consisting of a’s and b’s of length N. Then, they are packed (substring) into L number of curtains in each box. 
+The box with the maximum number of ‘aqua’ (a) color curtains is labeled. The task here is to find the number of ‘aqua’ color curtains in the labeled box.
+Note :
+If ‘L’ is not a multiple of N, the remaining number of curtains should be considered as a substring too. In simple words, after dividing the curtains in sets of ‘L’,
+any curtains left will be another set(refer example 1)
+
+Example 1:
+Input :
+bbbaaababa -> Value of str
+3    -> Value of L
+
+Output:
+3   -> Maximum number of a’s
+
+Explanation:
+From the input given above.
+Dividing the string into sets of 3 characters each 
+Set 1: {b,b,b}
+Set 2: {a,a,a}
+Set 3: {b,a,b}
+Set 4: {a} -> leftover characters also as taken as another set
+Among all the sets, Set 2 has more number of a’s. The number of a’s in set 2 is 3.
+Hence, the output is 3.
+
+Solution :--------------------------------
+
+[ REMAINING ] ##############################################################################################
+
+******************************************************************************************************************************************
+
+/////////////////////////////////////////////////////////////////  15 sept [ slot 1 ]  ////////////////////////////////////////////////////////////////////////////////////////
+
+Question 1 :------------------------------------------------------------------------------
+
+An intelligence agency has received reports about some threats. The reports consist of numbers in a mysterious method. 
+There is a number “N” and another number “R”. Those numbers are studied thoroughly and it is concluded that all digits of the number ‘N’ are summed
+up and this action is performed ‘R’ number of times. The resultant is also a single digit that is yet to be deciphered. 
+The task here is to find the single-digit sum of the given number ‘N’ by repeating the action ‘R’ number of times.
+If the value of ‘R’ is 0, print the output as ‘0’.
+
+Example 1:
+Input :
+99 -> Value of N
+3  -> Value of R
+
+Output :
+9  -> Possible ways to fill the cistern.
+
+Explanation:
+Here, the number N=99
+Sum of the digits N: 9+9 = 18
+Repeat step 2 ‘R’ times i.e. 3 tims  (9+9)+(9+9)+(9+9) = 18+18+18 =54
+Add digits of 54 as we need a single digit 5+4
+
+Hence , the output is 9.
+
+Solution :------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ 
+int main()
+{
+ ll n,m;
+ cin >> n>>m;
+ ll sum=0;
+ ll sum1=0;
+ while(n>0)
+ {
+     ll rem = n%10;
+     sum=sum+rem;
+     n/=10;
+ }
+ 
+ sum*=m;
+ 
+ while(sum>0)
+ {
+     ll rem = sum%10;
+     sum1=sum1+rem;
+     sum/=10;
+ }
+ cout << sum1;
+
+}
+******************************************************************************************************************************************
+
+Question 2. :--------------------------------------------------------------------------------------------------
+
+There are ‘N’ number of houses in a village. Each house requires a voltage ‘V’ volts of electricity to power up their home appliances.
+In this context, the houses are arranged in the form of a matrix (row* columns) where ‘N’ is the order of the matrix.
+The amount of voltage supplied to each house is calculated as current(i)*voltage(r) where ‘i’ is the row number and ‘r’ is the column number. 
+When the voltage supplied to the house (i*r) matches the value ‘V’, the appliances in the house can work. 
+The task here is to find the number of houses whose voltage value(i*r) is the same as ‘V’. If none of the house’s value matches display a message “NO POWER”.
+
+Example 1:
+Input :
+5      Value of N i.e. rows, columns=5
+15    Value of V
+
+Output :
+2      number of houses whose i*r value matches 
+
+Solution :------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ 
+int main()
+{
+ ll n,m;
+ cin >> n>>m;
+ int arr[n];
+ int cnt=0;
+
+ for(int i=1;i<=n;i++)
+ {
+     for(int j=1;j<=n;j++)
+     {
+       if(i*j==m)
+         {
+             cnt++;
+         }
+     }
+ }
+ 
+ if(cnt>0)
+ {
+     cout << cnt;
+ }
+ else
+ cout << "NO POWER";
+}
+********************************************************************************************************************************
+
+////////////////////////////////////////////////////////////////  15 sept [ slot 2 ]  ////////////////////////////////////////////////////////////////////////////////////////
+
+Question 1 :-------------------------------------------------------------------------------------------------------------
+
+Particulate matters are the biggest contributors to Delhi pollution. The main reason behind the increase in the concentration of PMs
+include vehicle emission by applying Odd Even concept for all types of vehicles. The vehicles with the odd last digit in the registration number will 
+be allowed on roads on odd dates and those with even last digit will on even dates.
+Given an integer array a[], contains the last digit of the registration number of N vehicles traveling on date D(a positive integer). 
+The task is to calculate the total fine collected by the traffic police department from the vehicles violating the rules.
+Note : For violating the rule, vehicles would be fined as X Rs.
+
+Example 1:
+Input :
+4 -> Value of N
+{5,2,3,7} -> a[], Elements a[0] to a[N-1], during input each element is separated by a new line
+12 -> Value of D, i.e. date 
+200 -> Value of x i.e. fine
+
+Output :
+600  -> total fine collected 
+
+Explanation:
+Date D=12 means , only an even number of vehicles are allowed. 
+Find will be collected from 5,3 and 7 with an amount of 200 each.
+Hence, the output = 600.
+
+Solution :-------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ 
+int main()
+{
+  ll n,b,c;
+  cin >>n>>b>>c;
+  int odd=0;
+  int even=0;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  {
+      cin >> arr[i];
+  }
+  for(int i=0;i<n;i++)
+  {
+      if(arr[i]%2==0)
+      {
+          even++;
+      }
+      else
+      {
+          odd++;
+      }
+  }
+  if(b%2==0)
+  {
+      c*=odd;
+  }
+  else
+  {
+      c*=even;
+  }
+  cout << c;
+}
+
+*******************************************************************************************************************************************
+
+Question 2. :----------------------------------------------------------------------------------------------------
+
+In a puzzle game, there are five blocks. Each block is assigned with some repeating numbers 
+
+The number 1 starts from block-1,2 on block-2,3 on block -3, 4 on block-4 and 5 on block-5. Again 6 on block-4 and so on.
+Here we observe a pattern, the numbers 10,8 and 2 are on block-2 , 3,7 and 11 on the block 3 and so on. 
+
+Given a positive integer N. The task is to find the correct block to which the number assigned.
+
+Example 1:
+Input :
+3   ---> Value of N
+
+Output :
+3    -> Block number
+
+Solution :-----------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ int main()
+{
+ ll n;
+ cin >> n;
+ ll rem= n%8;
+ if(rem==0)
+ {
+     cout << 2;
+ }
+ else if(rem>5)
+ {
+     cout << 10-n;
+ }
+ else
+ {
+     cout << n;
+ }
+ return 0;
+}
+
+****************************************************************************************************************************************************
+
+
+
+
 
 
 
