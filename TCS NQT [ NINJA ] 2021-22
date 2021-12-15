@@ -274,7 +274,9 @@ int main()
 
 Question 3:----------------------------------------------------------------------------
 
-Airport security officials have confiscated several item of the passengers at the security check point. All the items have been dumped into a huge box (array). Each item possesses a certain amount of risk[0,1,2]. Here, the risk severity of the items represent an array[] of N number of integer values. The task here is to sort the items based on their levels of risk in the array. The risk values range from 0 to 2.
+Airport security officials have confiscated several item of the passengers at the security check point. All the items have been dumped into a huge box (array).
+Each item possesses a certain amount of risk[0,1,2]. Here, the risk severity of the items represent an array[] of N number of integer values. 
+The task here is to sort the items based on their levels of risk in the array. The risk values range from 0 to 2.
 
 Example :
 Input :
@@ -315,7 +317,8 @@ int main()
 Question 1 :------------------------------------------------------------------------------------------------------------
 
 Question 1:
-A party has been organised on cruise. The party is organised for a limited time(T). The number of guests entering (E[i]) and leaving (L[i]) the party at every hour is represented as elements of the array. The task is to find the maximum number of guests present on the cruise at any given instance within T hours.
+A party has been organised on cruise. The party is organised for a limited time(T). The number of guests entering (E[i]) and leaving (L[i]) the party at every hour
+is represented as elements of the array. The task is to find the maximum number of guests present on the cruise at any given instance within T hours.
 
 Example 1:
 Input :
@@ -358,10 +361,12 @@ int main()
 
 Question 2 : ------------------------------------------------------------------------------------------------------
 
-At a fun fair, a street vendor is selling different colours of balloons. He sells N number of different colours of balloons (B[]). The task is to find the colour (odd) of the balloon which is present odd number of times in the bunch of balloons.
+At a fun fair, a street vendor is selling different colours of balloons. He sells N number of different colours of balloons (B[]).
+The task is to find the colour (odd) of the balloon which is present odd number of times in the bunch of balloons.
 
 Note:
-If there is more than one colour which is odd in number, then the first colour in the array which is present odd number of times is displayed. The colours of the balloons can all be either upper case or lower case in the array. If all the inputs are even in number, display the message “All are even”.
+If there is more than one colour which is odd in number, then the first colour in the array which is present odd number of times is displayed.
+The colours of the balloons can all be either upper case or lower case in the array. If all the inputs are even in number, display the message “All are even”.
 
 Example 1:
 7  -> Value of N
@@ -369,6 +374,241 @@ Example 1:
 
 Output :
 r -> [r,g,b,b,g,y,y]  -> “r” colour balloon is present odd number of times in the bunch.
+
+Solution : ---------- [ NOT ABLE TO SOLVE ] ----
+
+*****************************************************************************************************************************************************************
+
+//////////////////////////////////////////////////////////////////  13 Sept [ slot 2 ]  ////////////////////////////////////////////////////////////////////////////////////////
+
+Question 1 :--------------------------------------------------------------------------------------------
+
+A supermarket maintains a pricing format for all its products. A value N is printed on each product. 
+When the scanner reads the value N on the item, the product of all the digits in the value N is the price of the item. 
+The task here is to design the software such that given the code of any item N the product (multiplication) of all the digits of value should be computed(price).
+
+Example 1:
+Input :
+5244 -> Value of N
+
+Output :
+160 -> Price 
+
+Solution :---------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ 
+int main()
+{
+ ll n;
+ cin >> n;
+ ll product=1;
+ while(n>0)
+ {
+    ll rem=n%10;
+    product=product*rem;
+    n=n/10;
+ }
+ cout << product;
+ return 0;
+}
+**************************************************************************************************************************************
+
+Question 2 :----------------------------------------------------------------------------------
+
+A high- profile secret agency wants to handle all the messages sent and received in ciphers
+. They need to build a program/ software where every mail sent or received in the organization will be encrypted using some secret codes.
+One of formats used can be as follows:
+
+
+Actual
+a
+b
+c
+d
+e
+f
+g
+h
+i
+Cipher
+f
+g
+h
+i
+j
+k
+l
+m
+n
+
+
+
+Actual
+j
+k
+l
+m
+n
+o
+p
+q
+r
+Cipher
+o
+p
+q
+r
+s
+t
+u
+v
+w
+
+
+
+Actual
+s
+t
+u
+v
+w
+x
+y
+z
+Cipher
+x
+y
+z
+a
+b
+c
+d
+e
+
+
+
+The task is to encrypt the given string(str1) as per the ciphers given in the format above.
+
+Note : String cannot have any special characters, space, number or any uppercase latter.
+
+Example 1:
+Input :
+word -> value of str1
+
+Output:
+btwi  -> after changing the character with the ciphers
+
+w  o   r   d
+|  |   |   |
+b  t   w   i
+
+Solution :------------------------     [ PENDING /  USING ASCII VALUE ]----------------------------
+***************************************************************************************************************************************
+
+////////////////////////////////////////////////////////////////////  14 sept [ slot 1 ] ///////////////////////////////////////////////////////////////////////////////////
+
+Problem 1 :--------------------------------------------------------------------------------------------------
+
+An English school teacher is teaching how to build sentences for kindergarten students. She starts by teaching two words in a sentence, then 3 words and so on. The next step is that she asks the students to find which word in the sentence they have made has the maximum number of alphabets. The task here is to write program to find the longest word in each input sentence(str).
+
+Note :
+The sentence can consist of uppercase, lowercase alphabets, special characters and numbers.
+
+Example 1:
+Input :
+Knowledge is the greatest gift   -> Value of str
+
+Output :
+9
+
+Solution :------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    string s;
+    getline(cin,s);
+    istringstream ss(s);
+    int m=0;
+    while(ss)
+    {
+        string w;
+        ss>>w;
+        if(w=="") break;
+        m=max(m,(int)w.length());
+    }
+    cout<<m;
+}
+*********************************************************************************************************************************************************
+
+Question 2.-------------------------------------------------------------------------------------------------------------
+
+An international round table conference will be held in india. Presidents from all over the world representing their respective countries will be attending the conference. The task is to find the possible number of ways(P) to make the N members sit around the circular table such that.
+The president and prime minister of India will always sit next to each other.
+
+Example 1:
+Input :
+4   -> Value of N(No. of members)
+
+Output : 
+12  -> Possible ways of seating the members
+
+Explanation:
+2  members should always be next to each other. 
+So, 2 members can be in 2!ways
+Rest of the members can be arranged in (4-1)! ways.(1 is subtracted because the previously selected two members will be considered as single members now).
+So total possible ways 4 members can be seated around the circular table 2*6= 12.
+Hence, output is 12.
+
+
+Solution :----------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+  int n;
+  cin >> n;
+  int product=1;
+   int product1=1;
+  for(int i=1;i<=2;i++)
+  {
+      product=product*i;
+  }
+  for(int i=1;i<=n-1;i++)
+  {
+     product1=product1*i; 
+  }
+  cout << product1*product;
+}
+*******************************************************************************************************************************
+
+/////////////////////////////////////////////////////////////  14 sept [ slot 2 ]  ////////////////////////////////////////////////////////////////////////////////////////////
+
+problem 1 : ------------------------------------------------------------------------------------
+
+Ab ‘N’ number of customers are waiting at a restaurant that is recently opened. After every ‘M’ minutes , a new customer arrives at the restaurant. Due to the huge crowd, customers have to wait for their table at the restaurant. Only one customer is allowed at a time. The manager at the reception desk asks each customer to wait for ‘X‘ minutes to get their table. The task is to calculate the duration (in minutes) the last customer arrived needs to wait.
+
+Example 1:
+5      Value of N
+3      Value of M
+10     Value of X
+
+Output :
+28
+
+Solution :----------------
+
+
+
+
+
 
 
 
