@@ -310,6 +310,68 @@ int main()
 ***************************************************************************************************************************************
 
 
+/////////////////////////////////////////////////////////////////////////// 13 Sept [ slot 1 ] ////////////////////////////////////////////////////////////////////////////////
+
+Question 1 :------------------------------------------------------------------------------------------------------------
+
+Question 1:
+A party has been organised on cruise. The party is organised for a limited time(T). The number of guests entering (E[i]) and leaving (L[i]) the party at every hour is represented as elements of the array. The task is to find the maximum number of guests present on the cruise at any given instance within T hours.
+
+Example 1:
+Input :
+5    -> Value of T
+[7,0,5,1,3]  -> E[], Element of E[0] to E[N-1], where input each element is separated by new line 
+[1,2,1,3,4]   -> L[], Element of L[0] to L[N-1], while input each element is separate by new line.
+
+Output :
+8     -> Maximum number of guests on cruise at an instance.
+
+Solution :------------------------
+
+ #include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+  int n;
+  cin >> n;
+  int arr[n];
+  int arr1[n];
+  for(int i=0;i<n;i++)
+  {
+      cin >> arr[i];
+  }
+  for(int i=0;i<n;i++)
+  {
+      cin >> arr1[i];
+  }
+  int Max=0,sum=0;
+  
+  for(int i=0;i<n;i++)
+    {
+        sum+=arr[i]-arr1[i];
+        Max=max(sum,Max);
+    }
+    cout << Max;
+}
+*******************************************************************************************************************************************
+
+Question 2 : ------------------------------------------------------------------------------------------------------
+
+At a fun fair, a street vendor is selling different colours of balloons. He sells N number of different colours of balloons (B[]). The task is to find the colour (odd) of the balloon which is present odd number of times in the bunch of balloons.
+
+Note:
+If there is more than one colour which is odd in number, then the first colour in the array which is present odd number of times is displayed. The colours of the balloons can all be either upper case or lower case in the array. If all the inputs are even in number, display the message “All are even”.
+
+Example 1:
+7  -> Value of N
+[r,g,b,b,g,y,y]  -> B[] Elements B[0] to B[N-1], where input each element is sepārated by ṉew line.
+
+Output :
+r -> [r,g,b,b,g,y,y]  -> “r” colour balloon is present odd number of times in the bunch.
+
+
+
 
 
 
