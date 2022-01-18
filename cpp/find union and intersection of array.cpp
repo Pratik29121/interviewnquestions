@@ -1,4 +1,8 @@
-
+UNION OF ARRAY    input : 5 3
+                          5 4 3 6 4
+                          2 3 4
+   
+                  output : 6
    
 #include <bits/stdc++.h>
 using namespace std;
@@ -29,7 +33,5 @@ int main()
        
        cout << s.size() << "\n";
  
-
-  
 }
 
