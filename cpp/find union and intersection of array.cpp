@@ -19,7 +19,7 @@ int main()
   }
   for(int i=0;i<m;i++)
   {
-      cin >> arr1[m];
+      cin >> arr1[i];
   }
   
   set<int> s ;
