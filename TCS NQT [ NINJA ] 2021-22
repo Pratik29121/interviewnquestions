@@ -375,7 +375,33 @@ Example 1:
 Output :
 r -> [r,g,b,b,g,y,y]  -> “r” colour balloon is present odd number of times in the bunch.
 
-Solution : ---------- [ NOT ABLE TO SOLVE ] ----  ########################################################################################
+Solution : 
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+
+   int n;
+   cin >> n;
+  
+   char arr[n];
+   for(int i=0;i<n;i++)
+   {
+       cin >> arr[i];
+   }
+  for (int i = 0; i < n; i++) {
+         
+        int count = 0;
+         
+        for (int j = 0; j < n; j++)
+        {
+            if (arr[i] == arr[j])
+                count++;
+        }
+        if (count % 2 != 0)
+            cout << arr[i];
+  }
+  }
 
 *****************************************************************************************************************************************************************
 
