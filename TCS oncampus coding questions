@@ -31,3 +31,39 @@ int main() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+check given year is leap or not 
+example : input- 1900   output- NO
+          input- 2000   output- YES
+	  
+solution - 
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+
+int main() {
+	
+    bool res=true;
+    ll n;
+    cin >> n;
+    if ((n % 4 == 0 && n % 100 != 0) || n % 400 == 0)
+    {
+       res=true;
+    }
+    else
+    {
+        res=false;
+    }
+    
+    if(res)
+    {
+        cout << "YES";
+    }
+    else
+    cout << "NO";
+    
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	  
+          
