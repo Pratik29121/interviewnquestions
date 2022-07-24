@@ -4,7 +4,7 @@ find nth tearm of series
 example : input- 15   output- 42
           input- 14   output- 36
           
-code -    
+code - ------------------------------   
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -35,7 +35,7 @@ check given year is leap or not
 example : input- 1900   output- NO
           input- 2000   output- YES
 	  
-solution - 
+solution - ------------------------------------------------
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -74,7 +74,7 @@ Output : 3
 Explanation : The first number that does not 
 repeat is : 3
 	
-solution- 
+solution--------------------------------------------------- 
 
 #include <bits/stdc++.h>
 using namespace std;
