@@ -157,3 +157,37 @@ int main()
 
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Given a string, write a c++ function to check if it is palindrome or not. 
+
+A string is said to be palindrome if reverse of the string is same as string. For example, “abba” is palindrome, but “abbc” is not palindrome.
+
+solution------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+
+int main()
+{
+    bool res=true;
+   string s;
+   cin >> s;
+   ll n=s.size();
+   int l=0, h=n-1;
+   while(h>1)
+   {
+       if (s[l++] != s[h--])
+       {
+           res=false;
+       }
+       else
+       res=true;
+   }
+   if(res)
+   {
+       cout << "Palindrome";
+   }
+   else
+   cout << "NOT Pelindrome";
+}
